@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '📶 High-Speed Free Wi-Fi',
         '🚿 Hot Water & Rain Shower',
         '🍲 In-Room Dining Service',
-        '🧰 Daily Housekeeping & Fresh Towels',
-        '☕ Tea & Coffee Maker Setup'
+        '🧰 Daily Housekeeping & Fresh Towels'
       ]
     },
     'deluxe': {

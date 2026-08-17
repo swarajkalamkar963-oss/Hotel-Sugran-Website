@@ -1311,10 +1311,11 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-fast);
+  overflow-y: auto;
 }
 
 .modal-backdrop.active {
@@ -1325,13 +1326,18 @@ button, input, select {
 .modal-card {
   background-color: var(--paper-white);
   border-radius: var(--radius-lg);
-  max-width: 650px;
+  max-width: 580px;
   width: 100%;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   position: relative;
   transform: translateY(20px);
   transition: transform var(--transition-fast);
+  margin: auto;
 }
 
 .modal-backdrop.active .modal-card {
@@ -1340,48 +1346,57 @@ button, input, select {
 
 .modal-close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(15, 23, 42, 0.8);
   color: #ffffff;
-  border: none;
-  font-size: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.35rem;
+  line-height: 1;
   cursor: pointer;
   display: grid;
   place-items: center;
-  z-index: 10;
-  transition: background-color var(--transition-fast);
+  z-index: 30;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-fast);
 }
 
 .modal-close-btn:hover {
-  background-color: var(--pine-primary);
-}
-
-.modal-body {
-  padding: 32px;
+  background-color: var(--saffron);
+  border-color: var(--saffron);
+  transform: scale(1.08);
 }
 
 .modal-room-img {
   width: 100%;
-  height: 250px;
+  height: 200px;
+  max-height: 25vh;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  flex: 1;
+  overscroll-behavior: contain;
 }
 
 .modal-title {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--pine-deep);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .modal-amenities-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin: 20px 0;
+  gap: 10px 14px;
+  margin: 18px 0;
 }
 
 .modal-amenity-item {
@@ -1491,5 +1506,36 @@ button, input, select {
 
   .footer-top-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modal-card {
+    max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px);
+    border-radius: var(--radius-md);
+  }
+
+  .modal-room-img {
+    height: 160px;
+  }
+
+  .modal-body {
+    padding: 18px 16px;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+  }
+
+  .modal-amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
   }
 }
