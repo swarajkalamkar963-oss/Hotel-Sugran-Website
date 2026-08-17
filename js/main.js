@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       amenities: [
         '🛏️ Comfortable Queen Bed',
         '❄️ Efficient Air Conditioning',
-        '📺 HD Cable TV',
+        '📺 Flat Screen Smart LED TV',
         '📶 High-Speed Free Wi-Fi',
         '🚿 Continuous Hot & Cold Water',
         '🧹 Daily Room Cleaning Service',
